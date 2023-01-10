@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { ref, defineEmits } from 'vue';
-    import type { Post } from '@/App.vue';
+    import type { Post } from "@/components/PostItem.vue";
 
     const post = ref<Post>({
         id: 0,
@@ -8,7 +8,7 @@
         body: ""
     })
 
-    const emit = defineEmits<{(event: "onPostCreation", post: Post): void}>();
+    const emit = defineEmits<{ (event: "onPostCreation", post: Post): void }>();
 
     function createPost() {
         post.value.id = Date.now();

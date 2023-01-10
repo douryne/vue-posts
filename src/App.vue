@@ -2,12 +2,7 @@
     import { ref } from 'vue';
     import PostFormVue from './components/PostForm.vue';
     import PostListVue from './components/PostList.vue';
-
-    export type Post = {
-        id: number,
-        title: string,
-        body: string
-    }
+    import type { Post } from "@/components/PostItem.vue";
 
     const posts = ref<Post[]>([
         {id: 1, title: "Title 1", body: "Body 1"},
