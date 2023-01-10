@@ -30,11 +30,11 @@
 
 <template>
   <div class="app">
-    <form class="form">
+    <form class="form" @submit.prevent="createPost">
       <h2>Create Post</h2>
-      <input v-model="title" class="input" type="text" placeholder="Title" />
-      <input v-model="body" class="input" type="text" placeholder="Title" />
-      <button class="button" @click.prevent="createPost">Create</button>
+      <input v-model="title" class="input" type="text" placeholder="Title" minlength="5" required />
+      <input v-model="body" class="input" type="text" placeholder="Title" minlength="5" required />
+      <button class="button" type="submit">Create</button>
     </form>
     <div class="posts" v-if="posts">
       <div class="post" v-for="post in posts" :key="post.id">
