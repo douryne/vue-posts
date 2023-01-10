@@ -1,41 +1,23 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import PostFormVue from './components/PostForm.vue';
 
-  type Post = {
+  export type Post = {
     id: number,
     title: string,
     body: string
   }
-
-  const title = ref("");
-  const body = ref("");
 
   const posts = ref<Post[]>([
     {id: 1, title: "Title 1", body: "Body 1"},
     {id: 2, title: "Title 2", body: "Body 2"},
     {id: 3, title: "Title 3", body: "Body 3"},
   ])
-
-  function createPost() {
-    posts.value.push({
-      id: Date.now(),
-      title: title.value,
-      body: body.value
-    })
-
-    title.value = "";
-    body.value = "";
-  }
 </script>
 
 <template>
   <div class="app">
-    <form class="form" @submit.prevent="createPost">
-      <h2>Create Post</h2>
-      <input v-model="title" class="input" type="text" placeholder="Title" minlength="5" required />
-      <input v-model="body" class="input" type="text" placeholder="Title" minlength="5" required />
-      <button class="button" type="submit">Create</button>
-    </form>
+    <PostFormVue @on-post-creation="(post) => posts.push(post)" />
     <div class="posts" v-if="posts">
       <div class="post" v-for="post in posts" :key="post.id">
         <span><strong>Title: </strong>{{ post.title }}</span> 
@@ -51,45 +33,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  }
-  .input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid teal;
-    border-radius: 15px;
-
-    outline: none;
-    will-change: outline;
-    transition: outline 0.1s ease-in-out;
-  }
-  .input:focus {
-    outline: 2px solid teal;
-  }
-  .button {
-    align-self: flex-end;
-    padding: 10px;
-    background-color: transparent;
-    color: teal;
-    border: 1px solid teal;
-    border-radius: 15px;
-
-    cursor: pointer;
-
-    will-change: color, background-color, cursor;
-    transition: all 0.2s ease-in-out;
-  }
-  .button:hover {
-    color: white;
-    background-color: teal;
-  }
-  .button:disabled {
-    cursor: not-allowed
   }
 
   .posts {
