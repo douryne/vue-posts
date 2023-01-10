@@ -13,6 +13,12 @@
     function createPost() {
         post.value.id = Date.now();
         emit('onPostCreation', post.value);
+
+        post.value = {
+            id: 0,
+            title: "",
+            body: ""
+        }
     }
 </script>
 
