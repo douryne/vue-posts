@@ -26,42 +26,42 @@
 </template>
 
 <style scoped>
-  .form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  }
-  .input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid teal;
-    border-radius: 15px;
+    .form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid teal;
+        border-radius: 15px;
 
-    outline: none;
-    will-change: outline;
-    transition: outline 0.1s ease-in-out;
-  }
-  .input:focus {
-    outline: 2px solid teal;
-  }
-  .button {
-    align-self: flex-end;
-    padding: 10px;
-    background-color: transparent;
-    color: teal;
-    border: 1px solid teal;
-    border-radius: 15px;
+        outline: none;
+        will-change: outline;
+        transition: outline 0.1s ease-in-out;
+    }
+    .input:focus {
+        outline: 2px solid teal;
+    }
+    .button {
+        align-self: flex-end;
+        padding: 10px;
+        background-color: transparent;
+        color: teal;
+        border: 1px solid teal;
+        border-radius: 15px;
 
-    cursor: pointer;
+        cursor: pointer;
 
-    will-change: color, background-color, cursor;
-    transition: all 0.2s ease-in-out;
-  }
-  .button:hover {
-    color: white;
-    background-color: teal;
-  }
-  .button:disabled {
-    cursor: not-allowed
-  }
+        will-change: color, background-color, cursor;
+        transition: all 0.2s ease-in-out;
+    }
+    .button:hover {
+        color: white;
+        background-color: teal;
+    }
+    .button:disabled {
+        cursor: not-allowed
+    }
 </style>
