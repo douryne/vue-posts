@@ -37,7 +37,7 @@
       <button class="button" @click.prevent="createPost">Create</button>
     </form>
     <div class="posts" v-if="posts">
-      <div class="post" v-for="post in posts">
+      <div class="post" v-for="post in posts" :key="post.id">
         <span><strong>Title: </strong>{{ post.title }}</span> 
         <span><strong>Body: </strong>{{ post.body }}</span> 
       </div>
