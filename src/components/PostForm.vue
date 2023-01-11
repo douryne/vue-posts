@@ -29,7 +29,7 @@
       <h2>Create Post</h2>
       <InputVue v-model="post.title" class="InputVue" type="text" placeholder="Title" minlength="5" required />
       <InputVue v-model="post.body" class="InputVue" type="text" placeholder="Title" minlength="5" required />
-      <ButtonVue type="submit">Create</ButtonVue>
+      <ButtonVue type="submit" class="button">Create</ButtonVue>
     </form>
 </template>
 
@@ -38,5 +38,8 @@
         display: flex;
         flex-direction: column;
         row-gap: 10px;
+    }
+    .form .button {
+        align-self: flex-end;
     }
 </style>

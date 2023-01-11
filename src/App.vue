@@ -14,7 +14,7 @@
 <template>
     <div class="app">
         <PostFormVue @on-post-creation="(post) => posts.push(post)" />
-        <PostListVue :posts="posts" />
+        <PostListVue :posts="posts" @on-delete="(postId) => posts = posts.filter((post) => postId !== post.id)"/>
     </div>
 </template>
 

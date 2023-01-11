@@ -6,7 +6,6 @@
 
 <style scoped>
     .button {
-        align-self: flex-end;
         padding: 10px;
         background-color: transparent;
         color: teal;
