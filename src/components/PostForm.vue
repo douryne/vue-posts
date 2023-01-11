@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { ref, defineEmits } from 'vue';
     import ButtonVue from "@/components/UI/Button.vue";
+    import InputVue from "@/components/UI/Input.vue";
     import type { Post } from "@/components/PostItem.vue";
 
     const post = ref<Post>({
@@ -26,8 +27,8 @@
 <template>
     <form class="form" @submit.prevent="createPost">
       <h2>Create Post</h2>
-      <input v-model="post.title" class="input" type="text" placeholder="Title" minlength="5" required />
-      <input v-model="post.body" class="input" type="text" placeholder="Title" minlength="5" required />
+      <InputVue v-model="post.title" class="InputVue" type="text" placeholder="Title" minlength="5" required />
+      <InputVue v-model="post.body" class="InputVue" type="text" placeholder="Title" minlength="5" required />
       <ButtonVue type="submit">Create</ButtonVue>
     </form>
 </template>
@@ -37,18 +38,5 @@
         display: flex;
         flex-direction: column;
         row-gap: 10px;
-    }
-    .input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid teal;
-        border-radius: 15px;
-
-        outline: none;
-        will-change: outline;
-        transition: outline 0.1s ease-in-out;
-    }
-    .input:focus {
-        outline: 2px solid teal;
     }
 </style>
