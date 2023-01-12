@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { ref, computed } from 'vue';
+    import { ref } from 'vue';
     import PostFormVue from './components/PostForm.vue';
     import PostListVue from './components/PostList.vue';
     import DialogVue from './components/UI/Dialog.vue';
