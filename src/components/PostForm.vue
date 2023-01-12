@@ -1,25 +1,27 @@
 <script setup lang="ts">
-    import { ref, defineEmits } from 'vue';
+    import { ref } from 'vue';
     import ButtonVue from "@/components/UI/Button.vue";
     import InputVue from "@/components/UI/Input.vue";
-    import type { Post } from "@/components/PostItem.vue";
+    import { type Post, createPost as create } from '@/API/PostsStore';
 
     const post = ref<Post>({
         id: 0,
         title: "",
-        body: ""
+        body: "",
+        userId: 0
     })
-
-    const emit = defineEmits<{ (event: "onPostCreation", post: Post): void }>();
 
     function createPost() {
         post.value.id = Date.now();
-        emit('onPostCreation', post.value);
+        post.value.userId = post.value.id + Date.now();
+
+        create(post.value);
 
         post.value = {
             id: 0,
             title: "",
-            body: ""
+            body: "",
+            userId: 0
         }
     }
 </script>

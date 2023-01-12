@@ -1,11 +1,6 @@
 <script setup lang="ts">
     import ButtonVue from './UI/Button.vue';
-
-    export type Post = {
-        id: number,
-        title: string,
-        body: string
-    }
+    import type { Post } from '@/API/PostsStore';
 
     const emit = defineEmits<{ (event: "onDelete", value: Post["id"]): void }>();
     const props = defineProps<{ post: Post }>();
